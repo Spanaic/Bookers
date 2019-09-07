@@ -1,2 +1,26 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+
+<%= form_for(@book) do |f| %>
+
+    <% if @book.errors.any? %>
+        <%= @book.errors.count%><span>個の空欄があります。</span>
+        <% @book.errors.full_messages.each do |message| %>
+            <ul>
+                <li><%= message %></li>
+            </ul>
+        <% end %>
+    <% end %>
+
+    <p>Title</p>
+    <%= f.text_field :title %>
+
+    <p>Body</p>
+    <%= f.text_area :body %>
+
+    <%= f.submit 'Update Book' %>
+
+<% end %>
+
+<%= link_to "Edit", book_path(@book) %>
+<span>|</span>
+<%= link_to "Back", books_path %>

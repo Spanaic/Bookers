@@ -1,2 +1,24 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="show-box">
+    
+    <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+    <% end %>
+
+    <div class="title-box">
+        <p class="title">Title:</p>
+        <%= @book.title %>
+        <%# インスタンス変数.表示したいカラム名 %>
+        <%# 書く順番を間違えない %>
+    </div>
+
+    <div class="body-box">
+        <p class="body">Body:</p>
+        <%= @book.body %>
+    </div>
+</div>
+
+<div class="edit-back-box">
+    <%= link_to "Edit", edit_book_path(@book) %>
+    <span>|</span>
+    <%= link_to "Back", books_path %>
+</div>
