@@ -1,54 +1,59 @@
-<div　class="top-box"> 
-    <h1 class=header-title>Books</h1>
-    <div class="text-box">
-    <table>
-         <tr>
-            <thead>
-                <th>Title</th>
-                <th>Body</th>
-            </thead>
-        </tr>
-        <% @books.each do |book| %>
-        <tr>
-            <td class="text">
-                <%= book.title %>
-            </td>
-            <td class="text">
-                <%= book.body %>
-            </td>
-            <td><%= link_to "Show", book_path(book) %></td>
-            <td><%= link_to "Edit", edit_book_path(book) %></td>
-            <td><%= link_to "Destroy", book_path(book), method: :delete %></td>
-            <%# deleteメソッドのパス指定先は、削除したいパス（URL）を指定する %>
+<div　class="main-box"> 
+    <div class="index-box">
+        <h1 class=index-header-title>Books</h1>
+        <div class="index-table-box">
+            <table>
+                <tr>
+                    <thead>
+                        <th class="table-theme">Title</th>
+                        <th class="table-theme">Body</th>
+                    </thead>
+                </tr>
+                <% @books.each do |book| %>
+                <tr>
+                    <td>
+                        <p class="index-text"><%= book.title %></p>
+                    </td>
+                    <td>
+                        <p class="index-text"><%= book.body %></p>
+                    </td>
+                    <td><span class="index-link index-text"><%= link_to "Show", book_path(book), class: "index-link" %></span></td>
+                    <td><span class="index-link index-text"><%= link_to "Edit", edit_book_path(book), class: "index-link" %></span></td>
+                    <td><span class="index-link index-text"><%= link_to "Destroy", book_path(book), method: :delete, class: "index-link" %></span></td>
+                    <%# deleteメソッドのパス指定先は、削除したいパス（URL）を指定する %>
 
-        </tr>
-        <% end %>
-    </table>
+                </tr>
+                <% end %>
+            </table>
+        </div>
     </div>
+
     <div class="new-book-box">
-        <h3>New book</h3>
-        <%= form_for(@book) do |f| %>
-        <%# 引数にインスタンス変数を渡す %>
+        <h3 class="new-header-title">New book</h3>
+        <div class="new-form-box">
+            <%= form_for(@book) do |f| %>
+            <%# 引数にインスタンス変数を渡す %>
 
-    <%#    <%= render'layouts/error_messages', book: f.object %>    
-        <%# view内のrenderはパーシャル(部分的html)の呼び出しに使う %>
-        <%# render 'パーシャルの格納場所', モデル名: f.object %>
+        <%#    <%= render'layouts/error_messages', book: f.object %>    
+            <%# view内のrenderはパーシャル(部分的html)の呼び出しに使う %>
+            <%# render 'パーシャルの格納場所', モデル名: f.object %>
 
-        <% if @book.errors.any? %> 
-            <p><%= @book.errors.count %>個の空欄があります。</p>
-            <% @book.errors.full_messages.each do |message| %>
-               <ul>
-                    <li><%= message %></li>
-               </ul>
+            <% if @book.errors.any? %> 
+                <p><%= @book.errors.count %>個の空欄があります。</p>
+                <% @book.errors.full_messages.each do |message| %>
+                <ul>
+                        <li><%= message %></li>
+                </ul>
+                <% end %>
             <% end %>
-        <% end %>
 
-            <p>Title</p>
-            <%= f.text_field :title %>
-            <p>Body</p>
-            <%= f.text_area :body %>
-            <%= f.submit 'Create Book' %>
-        <% end %> 
-        <%# 最後のendに’＝’が要らない %>
+                <p class="index-text">Title</p>
+                <%= f.text_field :title %>
+                <p class="index-text">Body</p>
+                <%= f.text_area :body %>
+                <p><%= f.submit 'Create Book' %></p>
+            <% end %> 
+            <%# 最後のendに’＝’が要らない %>
+        </div>
     </div>
 </div>

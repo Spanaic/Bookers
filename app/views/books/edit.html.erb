@@ -1,26 +1,32 @@
-<h1>Editing Book</h1>
+<div>
+    <div class="edit-box">
+        <h1>Editing Book</h1>
 
-<%= form_for(@book) do |f| %>
+        <%= form_for(@book) do |f| %>
 
-    <% if @book.errors.any? %>
-        <%= @book.errors.count%><span>個の空欄があります。</span>
-        <% @book.errors.full_messages.each do |message| %>
-            <ul>
-                <li><%= message %></li>
-            </ul>
+            <% if @book.errors.any? %>
+                <%= @book.errors.count%><span>個の空欄があります。</span>
+                <% @book.errors.full_messages.each do |message| %>
+                    <ul>
+                        <li><%= message %></li>
+                    </ul>
+                <% end %>
+            <% end %>
+            <div class="edit-form-box">
+                <p>Title</p>
+                <%= f.text_field :title %>
+            </div>
+            <div class="edit-form-box">
+                <p>Body</p>
+                <%= f.text_area :body %>
+            </div>
+            <div class="edit-form-box">
+                <%= f.submit 'Update Book' %>
+            </div>
         <% end %>
-    <% end %>
-
-    <p>Title</p>
-    <%= f.text_field :title %>
-
-    <p>Body</p>
-    <%= f.text_area :body %>
-
-    <%= f.submit 'Update Book' %>
-
-<% end %>
-
-<%= link_to "Edit", book_path(@book) %>
-<span>|</span>
-<%= link_to "Back", books_path %>
+        
+        <%= link_to "Show", book_path(@book) %>
+        <span>|</span>
+        <%= link_to "Back", books_path %>
+    </div>
+</div>

@@ -13,9 +13,7 @@
     box-sizing:broder-box;
 }
 
-// .top-box {
-//     padding: 20px;
-// }
+// top
 .header-title {
     font-size: 26px;
     padding: 15px 0 0 20px;
@@ -32,7 +30,7 @@ a:link {
     color:　#808080;
 }
 a:visited {
-    color: red;
+    color: rgba($color: #000000, $alpha: 0.1);
 }
 a:hover {
     color: #fff;
@@ -41,5 +39,90 @@ a:hover {
 }
 .new-book-box {
     font-size: 18px;
-    padding: 15px 0 0 20px;
+    // padding: 15px 0 0 20px;
+}
+
+// index
+
+.main-box {
+}
+
+.index-box
+
+.index-header-title {
+    font-size:  26px;
+    margin: 30px 30px 15px 30px;
+}
+.index-table-box {
+    margin: 0 40px;
+ }
+.table-theme {
+    // text-align: center;
+    padding-bottom: 10px;
+}
+.index-text {
+    font-size: 14px;
+    // font-weight: lighter;
+    // font-family: verdana, arial, helvetica, sans-serif;
+}
+.index-link {
+    // margin: 0 1px;
+    color: black;
+}
+.new-header-title {
+    margin: 15px 30px;
+    font-size:  24px
+}
+.new-form-box {
+    margin: 15px 30px;
+}
+input[type="text"] {
+    border-radius: 3px;
+    border: solid 1px black;
+    height: 25px;
+}
+// form_forヘルプメソッドの形を変える記述。input[type="f.〇〇"の部分を入力]
+
+input[type="submit"] {
+    border-radius: 15px;
+    border: solid 1px black;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    width: 80px;
+    height: 25px;
+}
+
+// show
+
+.show-title-box {
+    margin: 30px 70px;
+}
+.show-body-box {
+    margin: 30px 70px;
+}
+.show-title {
+    font-weight: bold;
+}
+.show-body {
+    font-weight: bold;
+}
+.edit-back-box {
+    margin-left: 30px;
+}
+
+// edit
+
+.edit-box {
+    margin: 30px;
+}
+.edit-form-box {
+    margin-bottom: 15px;
+}
+
+// flash
+
+.success-style {
+    font-size: 14px;
+    font-weight: bold;
+    color: limegreen;
+    padding-bottom: 20px;
 }

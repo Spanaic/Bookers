@@ -24,14 +24,21 @@
     font-size: 12px;
     margin: 20px 0;
 }
+
+.top-link-box,
+.index-link {
 a:link {
-    color:　#808080;
+    color:　black;
 }
 a:visited {
-    color: red;
+    color: #808080;
 }
 a:hover {
     color: #fff;
     background-color: black;
     display: inline;
+}
+.index-link:nth-child(3):visited {
+    color: black;
+}
 }

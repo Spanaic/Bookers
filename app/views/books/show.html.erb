@@ -1,18 +1,21 @@
 <div class="show-box">
-    
-    <% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
-    <% end %>
 
-    <div class="title-box">
-        <p class="title">Title:</p>
+    <div class="show-title-box">
+
+        <div class="success-style">
+            <% if flash[:notice] %>
+                <p><%= flash[:notice] %></p>
+            <% end %>
+        </div>
+
+        <span class="show-title">Title:</span>
         <%= @book.title %>
         <%# インスタンス変数.表示したいカラム名 %>
         <%# 書く順番を間違えない %>
     </div>
 
-    <div class="body-box">
-        <p class="body">Body:</p>
+    <div class="show-body-box">
+        <span class="show-body">Body:</span>
         <%= @book.body %>
     </div>
 </div>
