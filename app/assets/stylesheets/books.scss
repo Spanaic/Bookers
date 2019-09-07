@@ -1,0 +1,45 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+* {
+    marign: 0;
+    padding: 0;
+    box-sizing:broder-box;
+}
+
+// .top-box {
+//     padding: 20px;
+// }
+.header-title {
+    font-size: 26px;
+    padding: 15px 0 0 20px;
+}
+.text-box {
+    padding: 0 40px;
+    height: auto 
+}
+.text {
+    font-size: 12px;
+    margin: 20px 0;
+}
+a:link {
+    color:　#808080;
+}
+a:visited {
+    color: red;
+}
+a:hover {
+    color: #fff;
+    background-color: black;
+    display: inline;
+}
+.new-book-box {
+    font-size: 18px;
+    padding: 15px 0 0 20px;
+}

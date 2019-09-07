@@ -1,0 +1,16 @@
+<% if @book.errors.any? %>
+<%# .errorsメソッドはvalidateに引っかかったデータにエラーを入力する %>
+<%# any?は前述のメソッドの入力が存在すれば”true",何もなければ"false"を返す %>
+    <div class="alert alert-warning">
+        <ul>
+            <% @book.errors.full_messages.each do |message| %>
+            <%# .full_messagesメソッドは.errorsメソッドで入力された全てのメッセージを呼び出す %>
+            <%# 呼び出されたメッセージを.each文で各messageにスライスする %>
+                <li>
+                    <%= message %>
+                    <%# 内容を出力する %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
